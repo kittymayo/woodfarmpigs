@@ -7,12 +7,12 @@ Rails.application.routes.draw do
 
   end
 
-  resources :categories, only: :index
-
-  resources :products do
-    resources :basket_items do
-      resources :baskets do
-        resources :orders
+  resources :categories, only: :index do
+    resources :products do
+      resources :basket_items do
+        resources :baskets do
+          resources :orders
+        end
       end
     end
   end

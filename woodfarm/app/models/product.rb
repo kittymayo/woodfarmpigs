@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  mount_uploader :photo, ImageUploader
+  # mount_uploader :photo, ImageUploader
   has_many :basket_items, dependent: :destroy
 
   validates :name, :description, :status, presence: true
