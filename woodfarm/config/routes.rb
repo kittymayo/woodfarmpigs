@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  get 'categories/index'
   root to: 'pages#home'
+  scope controller: :pages do
+    get :about_pigs
+    get :about_us
+
+  end
+
+  resources :categories, only: :index
 
   resources :products do
     resources :basket_items do
