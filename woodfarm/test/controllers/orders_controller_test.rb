@@ -1,33 +1,33 @@
 require 'test_helper'
 
-class BasketsControllerTest < ActionDispatch::IntegrationTest
+class OrdersControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get baskets_new_url
+    get orders_new_url
     assert_response :success
   end
 
   test "should get create" do
-    get baskets_create_url
+    get orders_create_url
     assert_response :success
   end
 
   test "should get update" do
-    get baskets_update_url
+    get orders_update_url
     assert_response :success
   end
 
   test "should get edit" do
-    get baskets_edit_url
+    get orders_edit_url
     assert_response :success
   end
 
   test "should get destroy" do
-    get baskets_destroy_url
+    get orders_destroy_url
     assert_response :success
   end
 
   test "should get show" do
-    get baskets_show_url
+    get orders_show_url
     assert_response :success
   end
 
