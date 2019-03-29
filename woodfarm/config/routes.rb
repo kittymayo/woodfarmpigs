@@ -4,16 +4,15 @@ Rails.application.routes.draw do
   scope controller: :pages do
     get :about_pigs
     get :about_us
-
   end
 
   resources :categories, only: :index do
-    resources :products do
-      resources :basket_items do
-        resources :baskets do
-          resources :orders
-        end
-      end
+    resources :products
+  end
+
+  resources :basket_items do
+    resources :baskets do
+      resources :orders
     end
   end
 
