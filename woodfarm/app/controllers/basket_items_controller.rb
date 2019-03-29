@@ -1,12 +1,14 @@
 class BasketItemsController < ApplicationController
+  before_action :find_product
   def new
     @basket_item = BasketItem.new
   end
 
   def create
-   @basket_item.product = Product.find(params[:id])
-     if @basket_item.save
-      redirect_to category_products(@product)
+    @basket_item = BasketItem.new(basket_item_params)
+    @basket_item.product_id = @product.id
+    if @basket_item.save
+      redirect_to category_products_path(@category)
     else
       render :new
     end
@@ -31,17 +33,14 @@ class BasketItemsController < ApplicationController
   private
 
   def find_product
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:product_id])
+    @category = Category.find(params[:category_id])
   end
 
-  def product_params
-    params.require(:product).permit(
-      :description,
-      :name,
-      :price_cents,
-      :category,
-      :photo)
+  def basket_item_params
+    params.require(:basket_item).permit(
+      :product_id,
+      :quantity
+    )
   end
-
 end
-

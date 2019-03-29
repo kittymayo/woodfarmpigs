@@ -1,4 +1,11 @@
 <h1>BasketItems#new</h1>
 <p>Find me in app/views/basket_items/new.html.erb</p>
 
+   <%= simple_form_for [@category, @product, @basket_item] do |f|%>
+
+      <%= f.input :quantity %>
+
+      <%= f.submit "update quantity", class: "btn btn-success"%>
+
+  <% end %>
 
