@@ -7,13 +7,14 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: :index do
-    resources :products
+    resources :products do
+      resources :basket_items
+    end
   end
 
-  resources :basket_items do
+
     resources :baskets do
       resources :orders
-    end
   end
 
   devise_for :users

@@ -1,3 +1,10 @@
 <h1>BasketItems#new</h1>
 <p>Find me in app/views/basket_items/new.html.erb</p>
-<% raise %>
+
+   <%= simple_form_for @basket_item] do |f|%>
+
+      <%= f.input :quantity, :as => :hidden, :input_html => { :value => "rejected" } %>
+
+      <%= f.button :submit, :class => "btn btn-success"%>
+
+        <% end %>

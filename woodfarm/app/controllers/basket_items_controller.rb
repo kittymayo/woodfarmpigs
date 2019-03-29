@@ -1,8 +1,11 @@
 class BasketItemsController < ApplicationController
   def new
+    @basket_item = BasketItem.new
+
   end
 
   def create
+     @basket_item.product = Product.find(params[:id])
   end
 
   def update
@@ -20,3 +23,5 @@ class BasketItemsController < ApplicationController
   def index
   end
 end
+
+
