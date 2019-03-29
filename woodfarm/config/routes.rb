@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   end
 
 
-    resources :baskets do
-      resources :orders
+  resources :baskets do
+   resources :orders
   end
 
   devise_for :users

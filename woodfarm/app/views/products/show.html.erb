@@ -4,4 +4,4 @@
 <p> <%= @product.description %></p>
 <p>£ <%= @product.price_cents/100.round(2) %></p>
 
-<%= link_to "add to basket", new_category_product_basket_item_path(:category_id, :product_id)  %>
+<%= link_to "add to basket", new_category_product_basket_item_path(@category.id, @product.id)  %>
